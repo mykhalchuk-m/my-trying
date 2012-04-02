@@ -19,6 +19,11 @@
 		<user.adminPassword>admin</user.adminPassword>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.4</version>
+		</dependency>
 
 		<!-- Servlet -->
 		<dependency>
@@ -189,7 +194,7 @@
 					<warName>${project.artifactId}</warName>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.glassfish.maven.plugin</groupId>
 				<artifactId>maven-glassfish-plugin</artifactId>
 				<version>2.1</version>
@@ -197,7 +202,7 @@
 					<glassfishDirectory>${glassfish.home}</glassfishDirectory>
 					<user>${domain.username}</user>
 					<adminPassword>${user.adminPassword}</adminPassword>
-					<!-- <passFile>path/to/asadmin/passfile</passFile> -->
+					<passFile>path/to/asadmin/passfile</passFile>
 					<autoCreate>true</autoCreate>
 					<debug>true</debug>
 					<echo>false</echo>
@@ -216,7 +221,34 @@
 						</component>
 					</components>
 				</configuration>
+			</plugin> -->
+			<plugin>
+				<groupId>com.jelastic</groupId>
+				<artifactId>jelastic-maven-plugin</artifactId>
+				<version>1.7-SNAPSHOT</version>
+				<configuration>
+					<email>mykhalchuk.m@gmail.com</email>
+					<password>parol2012!</password>
+					<environment>soctest</environment>
+					<api_hoster>app.jelastic.com</api_hoster>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>plugins-release</name>
+			<url>http://repo.jelastic.servint.net/plugins-release</url>
+		</pluginRepository>
+		<pluginRepository>
+			<snapshots />
+			<id>snapshots</id>
+			<name>plugins-snapshot</name>
+			<url>http://repo.jelastic.servint.net/plugins-snapshot</url>
+		</pluginRepository>
+	</pluginRepositories>
 </project>

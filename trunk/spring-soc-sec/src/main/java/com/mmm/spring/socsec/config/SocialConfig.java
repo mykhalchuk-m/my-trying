@@ -37,10 +37,10 @@ public class SocialConfig {
 		registry.addConnectionFactory(new FacebookConnectionFactory(
 				"261893670554548", "2d1394200d2283b9af775813c5abb5f7"));
 		registry.addConnectionFactory(new TwitterConnectionFactory(
-				"YR571S2JiVBOFyJS5MEg",
-				"Kb8hS0luftwCJX3qVoyiLUMfZDtK1EozFoUkjNLUMx4"));
-		registry.addConnectionFactory(new VKontakteConnectionFactory(
-				"2862609", "YiAnAYlXDS1FSOIi3dTG"));
+				"7iOKT0EKBHSGNLf8ACjkuw",
+				"elk9i6jxvJkxjRK6eAvGbq1M8hrojz5bb8ZAfDrPk"));
+		registry.addConnectionFactory(new VKontakteConnectionFactory("2862609",
+				"YiAnAYlXDS1FSOIi3dTG"));
 		return registry;
 	}
 
@@ -80,7 +80,7 @@ public class SocialConfig {
 		return connectionRepository().findPrimaryConnection(Twitter.class)
 				.getApi();
 	}
-	
+
 	@Bean
 	@Scope(value = "request", proxyMode = ScopedProxyMode.INTERFACES)
 	public VKontakte vKontakte() {
