@@ -9,11 +9,32 @@
 </head>
 <body>
 	<div>
-		<a href="/spring-soc-sec/login">login</a>
+		<a href="/spring-soc-sec">index</a>
 	</div>
-	<br />
-	<a href="<c:url value="/signout" />">Sign Out</a>
-	<br />
-	<a href="<c:url value="/soc" />">soc</a>
+	<div>${name}</div>
+	<div>
+		<p>
+			<img src="${fPhoto}" />
+		</p>
+		<p>
+			<span>${fName}</span>
+		</p>
+	</div>
+	<div>
+		<p>
+			<img src="${tPhoto}" />
+		</p>
+		<p>
+			<span>${tName}</span>
+		</p>
+	</div>
+	<div>
+		<p>
+			<img src="${vPhoto}" />
+		</p>
+		<p>
+			<span>${vName}</span>
+		</p>
+	</div>
 </body>
 </html>
