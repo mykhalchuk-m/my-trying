@@ -11,29 +11,12 @@
 	<div>
 		<a href="/spring-soc-sec">index</a>
 	</div>
-	<div>${name}</div>
 	<div>
 		<p>
-			<img src="${fPhoto}" />
+			<img src="${photo}" />
 		</p>
 		<p>
-			<span>${fName}</span>
-		</p>
-	</div>
-	<div>
-		<p>
-			<img src="${tPhoto}" />
-		</p>
-		<p>
-			<span>${tName}</span>
-		</p>
-	</div>
-	<div>
-		<p>
-			<img src="${vPhoto}" />
-		</p>
-		<p>
-			<span>${vName}</span>
+			<span>${name}</span>
 		</p>
 	</div>
 </body>

@@ -191,10 +191,10 @@
 				<configuration>
 					<packagingExcludes>WEB-INF/web.xml</packagingExcludes>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<warName>${project.artifactId}</warName>
+					<warName>${project.artifactId}-${project.version}</warName>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.glassfish.maven.plugin</groupId>
 				<artifactId>maven-glassfish-plugin</artifactId>
 				<version>2.1</version>
@@ -221,7 +221,7 @@
 						</component>
 					</components>
 				</configuration>
-			</plugin> -->
+			</plugin>
 			<plugin>
 				<groupId>com.jelastic</groupId>
 				<artifactId>jelastic-maven-plugin</artifactId>
@@ -229,8 +229,9 @@
 				<configuration>
 					<email>mykhalchuk.m@gmail.com</email>
 					<password>parol2012!</password>
+					<context>${project.artifactId}</context>
 					<environment>soctest</environment>
-					<api_hoster>app.jelastic.com</api_hoster>
+					<api_hoster>jelastic.dogado.eu</api_hoster>
 				</configuration>
 			</plugin>
 		</plugins>
