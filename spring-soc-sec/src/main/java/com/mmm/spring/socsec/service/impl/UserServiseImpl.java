@@ -25,7 +25,16 @@ public class UserServiseImpl implements UserService {
 
 	@SuppressWarnings("unchecked")
 	public List<User> getAllUsers() {
-		return (List<User>)sessionFactory.openSession().createCriteria(User.class).list();
+		return (List<User>) sessionFactory.openSession()
+				.createCriteria(User.class).list();
+	}
+
+	public String getUserProvider(String userId) {
+		User user = (User) sessionFactory.openSession()
+				.createCriteria(User.class)
+				.add(Restrictions.eq("userId", userId)).uniqueResult();
+		return user.getProviderId();
+
 	}
 
 }

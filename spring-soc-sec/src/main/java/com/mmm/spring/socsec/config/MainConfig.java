@@ -23,9 +23,9 @@ public class MainConfig {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://mysql-socsec.jelastic.dogado.eu/spring_soc_sec");
+		dataSource.setUrl("jdbc:mysql://mysql-soctest.jelastic.dogado.eu/spring_soc_sec");
 		dataSource.setUsername("root");
-		dataSource.setPassword("YbkDvcCjeV");
+		dataSource.setPassword("8FlU9pzPWn");
 		return dataSource;
 	}
 	
