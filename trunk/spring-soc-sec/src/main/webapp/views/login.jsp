@@ -21,6 +21,7 @@ form {
 			width="30px" /> <input type="hidden" name="scope"
 			value="email,publish_stream,offline_access" />
 	</form>
+	<!-- 
 	<form action="<c:url value="/signin/twitter" />" method="POST">
 		<input type="image" src='<c:url value="/resources/img/tw.jpg"/>'
 			width="30px" />
@@ -29,5 +30,6 @@ form {
 		<input type="image" src='<c:url value="/resources/img/vk.jpg"/>'
 			width="30px" />
 	</form>
+	 -->
 </body>
 </html>

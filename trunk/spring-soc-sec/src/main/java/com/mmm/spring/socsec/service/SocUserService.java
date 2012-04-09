@@ -7,5 +7,7 @@ public interface SocUserService {
 
 	String getName();
 	
+	void postToWall(String message);
+	
 	void setConnectionRepository(ConnectionRepository connectionRepository);
 }

@@ -18,9 +18,7 @@ import org.springframework.social.connect.support.ConnectionFactoryRegistry;
 import org.springframework.social.connect.web.ProviderSignInController;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
-import org.springframework.social.twitter.api.Twitter;
 import org.springframework.social.twitter.connect.TwitterConnectionFactory;
-import org.springframework.social.vkontakte.api.VKontakte;
 import org.springframework.social.vkontakte.connect.VKontakteConnectionFactory;
 
 import com.mmm.spring.socsec.service.SocialConnectionSignUp;
@@ -34,8 +32,11 @@ public class SocialConfig {
 	@Bean
 	public ConnectionFactoryLocator connectionFactoryLocator() {
 		ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
+		// jelastic config
+		// registry.addConnectionFactory(new FacebookConnectionFactory(
+		// "261893670554548", "2d1394200d2283b9af775813c5abb5f7"));
 		registry.addConnectionFactory(new FacebookConnectionFactory(
-				"261893670554548", "2d1394200d2283b9af775813c5abb5f7"));
+				"264718096950697", "83b042d633c222c448292d3827362d32"));
 		registry.addConnectionFactory(new TwitterConnectionFactory(
 				"7iOKT0EKBHSGNLf8ACjkuw",
 				"elk9i6jxvJkxjRK6eAvGbq1M8hrojz5bb8ZAfDrPk"));
@@ -74,17 +75,17 @@ public class SocialConfig {
 				.getApi();
 	}
 
-	@Bean
-	@Scope(value = "request", proxyMode = ScopedProxyMode.INTERFACES)
-	public Twitter twitter() {
-		return connectionRepository().findPrimaryConnection(Twitter.class)
-				.getApi();
-	}
-
-	@Bean
-	@Scope(value = "request", proxyMode = ScopedProxyMode.INTERFACES)
-	public VKontakte vKontakte() {
-		return connectionRepository().findPrimaryConnection(VKontakte.class)
-				.getApi();
-	}
+	// @Bean
+	// @Scope(value = "request", proxyMode = ScopedProxyMode.INTERFACES)
+	// public Twitter twitter() {
+	// return connectionRepository().findPrimaryConnection(Twitter.class)
+	// .getApi();
+	// }
+	//
+	// @Bean
+	// @Scope(value = "request", proxyMode = ScopedProxyMode.INTERFACES)
+	// public VKontakte vKontakte() {
+	// return connectionRepository().findPrimaryConnection(VKontakte.class)
+	// .getApi();
+	// }
 }

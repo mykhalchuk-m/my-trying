@@ -23,9 +23,11 @@ public class MainConfig {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://mysql-soctest.jelastic.dogado.eu/spring_soc_sec");
+//		dataSource.setUrl("jdbc:mysql://mysql-soctest.jelastic.dogado.eu/spring_soc_sec");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/spring_soc_sec");
 		dataSource.setUsername("root");
-		dataSource.setPassword("8FlU9pzPWn");
+//		dataSource.setPassword("8FlU9pzPWn");
+		dataSource.setPassword("root");
 		return dataSource;
 	}
 	
@@ -58,3 +60,4 @@ public class MainConfig {
 		return props;
 	}
 }
+

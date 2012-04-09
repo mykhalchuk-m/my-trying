@@ -18,6 +18,12 @@
 		<p>
 			<span>${name}</span>
 		</p>
+		<p>
+			<form action="/spring-soc-sec/updateStatus" method="post">
+				<textarea rows="15" cols="50" name="message"></textarea>
+				<input type="submit" value="update"/>
+			</form>
+		</p>
 	</div>
 </body>
 </html>
