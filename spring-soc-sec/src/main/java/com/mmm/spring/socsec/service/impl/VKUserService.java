@@ -25,4 +25,8 @@ public class VKUserService implements SocUserService {
 		vKontakte = connection.getApi();
 	}
 
+	public void postToWall(String message) {
+		vKontakte.wallOperations().post(message);		
+	}
+
 }

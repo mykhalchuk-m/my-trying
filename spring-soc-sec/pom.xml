@@ -5,6 +5,7 @@
 	<artifactId>spring-soc-sec</artifactId>
 	<version>0.0.1</version>
 	<packaging>war</packaging>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework-version>3.1.0.RELEASE</org.springframework-version>
@@ -180,6 +181,7 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -191,7 +193,7 @@
 				<configuration>
 					<packagingExcludes>WEB-INF/web.xml</packagingExcludes>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<warName>${project.artifactId}-${project.version}</warName>
+					<warName>${project.artifactId}</warName>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -202,7 +204,6 @@
 					<glassfishDirectory>${glassfish.home}</glassfishDirectory>
 					<user>${domain.username}</user>
 					<adminPassword>${user.adminPassword}</adminPassword>
-					<passFile>path/to/asadmin/passfile</passFile>
 					<autoCreate>true</autoCreate>
 					<debug>true</debug>
 					<echo>false</echo>
@@ -222,34 +223,40 @@
 					</components>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.jelastic</groupId>
-				<artifactId>jelastic-maven-plugin</artifactId>
-				<version>1.7-SNAPSHOT</version>
-				<configuration>
-					<email>mykhalchuk.m@gmail.com</email>
-					<password>parol2012!</password>
-					<context>${project.artifactId}</context>
-					<environment>soctest</environment>
-					<api_hoster>jelastic.dogado.eu</api_hoster>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
-	<pluginRepositories>
-		<pluginRepository>
+	<repositories>
+		<repository>
+			<id>org.springframework.maven.release</id>
+			<name>Spring Maven Release Repository</name>
+			<url>http://maven.springframework.org/release</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-			<id>central</id>
-			<name>plugins-release</name>
-			<url>http://repo.jelastic.servint.net/plugins-release</url>
-		</pluginRepository>
-		<pluginRepository>
-			<snapshots />
-			<id>snapshots</id>
-			<name>plugins-snapshot</name>
-			<url>http://repo.jelastic.servint.net/plugins-snapshot</url>
-		</pluginRepository>
-	</pluginRepositories>
+		</repository>
+		<!-- For testing against latest Spring snapshots -->
+		<repository>
+			<id>org.springframework.maven.snapshot</id>
+			<name>Spring Maven Snapshot Repository</name>
+			<url>http://maven.springframework.org/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<!-- For developing against latest Spring milestones -->
+		<repository>
+			<id>org.springframework.maven.milestone</id>
+			<name>Spring Maven Milestone Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 </project>

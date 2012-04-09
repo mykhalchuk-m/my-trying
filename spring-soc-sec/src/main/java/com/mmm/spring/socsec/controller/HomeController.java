@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mmm.spring.socsec.service.SocUserService;
 import com.mmm.spring.socsec.service.UserService;
@@ -37,7 +38,6 @@ public class HomeController {
 
 		String provider = userService.getUserProvider(SecurityContextHolder
 				.getContext().getAuthentication().getName());
-		System.out.println("------------------------>>> " + provider);
 		SocUserService sus =  UserServiceFactory.getSocUserService(provider, connectionRepository);
 		model.addAttribute("name", sus.getName());
 		model.addAttribute("photo", sus.getPicure());
@@ -47,6 +47,15 @@ public class HomeController {
 	@RequestMapping("/login")
 	public String login() {
 		return "login";
+	}
+	
+	@RequestMapping(value = "/updateStatus", method = RequestMethod.POST)
+	public String updateStatus(@RequestParam String message, Model model) {
+		String provider = userService.getUserProvider(SecurityContextHolder
+				.getContext().getAuthentication().getName());
+		SocUserService sus =  UserServiceFactory.getSocUserService(provider, connectionRepository);
+		sus.postToWall(message);
+		return "redirect:soc";
 	}
 
 }

@@ -27,4 +27,8 @@ public class FBUserService implements SocUserService {
 		facebook = connection.getApi();
 	}
 
+	public void postToWall(String message) {
+		facebook.feedOperations().updateStatus(message);
+	}
+
 }

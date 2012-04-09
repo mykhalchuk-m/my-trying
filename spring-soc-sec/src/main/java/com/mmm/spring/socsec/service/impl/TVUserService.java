@@ -26,4 +26,8 @@ public class TVUserService implements SocUserService {
 
 	}
 
+	public void postToWall(String message) {
+		twitter.timelineOperations().updateStatus(message);
+	}
+
 }
