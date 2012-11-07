@@ -1,0 +1,14 @@
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName1', 'firstName1', 12, 'qwert1@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName2', 'firstName2', 12, 'qwert2@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName3', 'firstName3', 12, 'qwert3@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName4', 'firstName4', 12, 'qwert4@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName5', 'firstName5', 12, 'qwert5@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName6', 'firstName6', 12, 'qwert6@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName7', 'firstName7', 12, 'qwert7@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName8', 'firstName8', 12, 'qwert8@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName9', 'firstName9', 12, 'qwert9@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName10', 'firstName10', 12, 'qwert10@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName11', 'firstName11', 12, 'qwert11@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName12', 'firstName12', 12, 'qwert12@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName13', 'firstName13', 12, 'qwert13@as.df');
+insert into user_tbl(LastName, FirstName, Age, Email) values ('lastName14', 'firstName14', 12, 'qwert14@as.df');
